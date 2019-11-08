@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    padding: 20px;
+    background-color: pink;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.3;
+
+    @media #{$mq-900-down} {
+        padding: 10px;
+    }
+}
+
+.container {
+    width: 80%;
+    margin: 40px auto;
+}
