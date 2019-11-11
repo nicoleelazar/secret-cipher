@@ -15,14 +15,18 @@
     <main>
         <h1>Title</h1>
         <p>Some explanation</p>
+        <div>
+            <button class="encodeButton">Encode a secret message</button>
+            <button class="decodeButton">Decode a secret message</button>
+        </div>
         <select name="rotations" id="rotations">
             <option value="13" selected="">rot13</option>
             <option value="14">rot14</option>
             <option value="15">rot15</option>
         </select>
 
-        <textarea name="" id="userMessage" cols="30" rows="10" placeholder="Write your message here"></textarea>
-        <textarea name="" id="decodedMessage" cols="30" rows="10" readonly></textarea>
+        <textarea name="" id="userMessage" cols="30" rows="10" placeholder="Your message goes here"></textarea>
+        <textarea name="" id="resultMessage" cols="30" rows="10" readonly></textarea>
 
     </main>
 
