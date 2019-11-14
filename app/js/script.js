@@ -2,8 +2,9 @@ const userMsg = document.getElementById("userMessage");
 const resultMsg = document.getElementById("resultMessage");
 let options = document.getElementById("rotations");
 
-const encodeButton = document.querySelector(".encodeButton");
-const decodeButton = document.querySelector(".decodeButton");
+const encodeButton = document.getElementById("encodeButton");
+const decodeButton = document.getElementById("decodeButton");
+const messageBox = document.getElementById("message-box");
 
 let rotationAmount;
 let encoding = true;
@@ -25,12 +26,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
 encodeButton.addEventListener('click', () => {
     encoding = true;
     resultMsg.value = rotCipherEncode(userMsg.value);
-    console.log('ENCODE btn pressed')
+    messageBox.innerHTML = "Ready to Encode your message!";
+    messageBox.style.color = "#2797c4";
+    userMsg.style.backgroundColor = "#e9f9ff";
+
 });
 decodeButton.addEventListener('click', () => {
     encoding = false;
     resultMsg.value = rotCipherDecode(userMsg.value);
-    console.log('Decode btn pressed')
+    messageBox.innerHTML = "Add your message to Decode!";
+    messageBox.style.color = "#25a77b";
+    userMsg.style.backgroundColor = "#ebfff3";
+
 });
 
 

@@ -1,4 +1,95 @@
 @import "variables";
 @import "colors";
 @import "global";
-@import "typography";
+
+
+h1 {
+    font-size: 50px;
+    color: $c-blue-light;
+    padding: 50px 0 30px 0;
+
+
+    @media #{$mq-620-down} {
+        font-size: 40px;
+    }
+}
+
+p {
+    font-size: 18px;
+    color: $c-blue-dark;
+    padding-bottom: 30px;
+    border-bottom: dashed $c-grey-light 1px;
+
+}
+
+
+// buttons
+
+.button-box {
+    padding: 20px 0;
+
+
+
+    #decodeButton {
+        background-color: $c-btn-green;
+        color: $c-white;
+        padding: 10px 40px;
+
+        @media #{$mq-620-down} {
+            display: block;
+            width: 90%;
+        }
+
+    }
+
+    #decodeButton:hover {
+        background-color: $c-btn-green-hover;
+
+    }
+
+    #encodeButton {
+        background-color: $c-btn-blue;
+        color: $c-white;
+        padding: 10px 40px;
+        margin-right: 30px;
+
+        @media #{$mq-620-down} {
+            display: block;
+            width: 90%;
+            margin-bottom: 25px;
+        }
+
+    }
+
+    #encodeButton:hover {
+        background-color: $c-btn-blue-hover;
+
+    }
+
+}
+
+#message-box {
+    width: 100%;
+    height: 80px;
+    padding-top: 22px;
+    color: $c-btn-blue;
+}
+
+
+.custom-select {
+    max-width: 500px;
+    margin-bottom: 30px;
+    color: $c-blue-dark;
+}
+
+#userMessage {
+    background-color: $c-textbox-blue;
+    margin-bottom: 30px;
+    color: $c-blue-dark;
+}
+
+#resultMessage {
+    background-color: $c-white;
+    margin-bottom: 50px;
+    color: $c-blue-dark;
+}

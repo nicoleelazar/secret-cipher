@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="dist/style.css">
     <title>Document</title>
 
@@ -13,20 +15,27 @@
 <body>
 
     <main>
-        <h1>Title</h1>
-        <p>Some explanation</p>
-        <div>
-            <button class="encodeButton">Encode a secret message</button>
-            <button class="decodeButton">Decode a secret message</button>
+        <h1>Secret Cipher</h1>
+        <p>Encode or Decode your messages below. Choose an option, add your text and select a rotation amount.</p>
+        <div class="button-box">
+            <button type="button" id="encodeButton" class="btn">Encode a message</button>
+            <button type="button" id="decodeButton" class="btn">Decode a message</button>
         </div>
-        <select name="rotations" id="rotations">
-            <option value="13" selected="">rot13</option>
+
+        <div id="message-box">Ready to Encode your message!</div>
+
+        <textarea class="form-control" name="" id="userMessage" rows="8"
+            placeholder="Your message goes here"></textarea>
+
+        <!-- <div class="mobile-options full-screen-options"> -->
+        <select name="rotations" id="rotations" class="custom-select">
+            <option value="13" selected>rot13</option>
             <option value="14">rot14</option>
             <option value="15">rot15</option>
         </select>
+        <!-- </div> -->
 
-        <textarea name="" id="userMessage" cols="30" rows="10" placeholder="Your message goes here"></textarea>
-        <textarea name="" id="resultMessage" cols="30" rows="10" readonly></textarea>
+        <textarea class="form-control" name="" id="resultMessage" rows="8" readonly></textarea>
 
     </main>
 
