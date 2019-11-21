@@ -5,6 +5,8 @@ let options = document.getElementById("rotations");
 const encodeButton = document.getElementById("encodeButton");
 const decodeButton = document.getElementById("decodeButton");
 const messageBox = document.getElementById("message-box");
+const copyButton = document.getElementById("copyButton");
+const hiddenContent = document.querySelector(".copyTextBox");
 
 let rotationAmount;
 let encoding = true;
@@ -12,13 +14,18 @@ let encoding = true;
 
 
 // On page load clear fields, set rotation 13 as default value and default selectied option
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
+    window.scrollTo(0, 0);
+
     userMsg.value = "";
     resultMsg.value = "";
 
     options.value = 13;
     rotationAmount = 13;
+
+
 });
+
 
 
 // toggle for buttons to run encode or decode functions + change input already in text area
@@ -31,6 +38,7 @@ encodeButton.addEventListener('click', () => {
     userMsg.style.backgroundColor = "#e9f9ff";
 
 });
+
 decodeButton.addEventListener('click', () => {
     encoding = false;
     resultMsg.value = rotCipherDecode(userMsg.value);
@@ -56,7 +64,6 @@ userMsg.addEventListener('input', showMsg);
 
 // Change rotation value (changes existing text input) according to selected option
 function chosenOption() {
-    console.log(options.value);
 
     rotationAmount = Number(options.value);
 
@@ -133,3 +140,32 @@ function rotCipherDecode(str) {
 
     return decodedWord;
 }
+
+
+
+
+// Copy to clipboard
+
+function copyText() {
+
+    // Select the text field
+    resultMsg.select();
+    //for mobile devices
+    resultMsg.setSelectionRange(0, 99999);
+
+    //Copy the text inside the text field
+    document.execCommand("copy");
+
+    //run confirmation msg
+    hiddenContent.innerHTML = 'Copied to Clipboard';
+    hiddenContent.classList.add('copyTextBoxAnimate');
+
+    //remove confirmation msg and clear field
+    setTimeout(function () {
+        hiddenContent.classList.remove('copyTextBoxAnimate');
+        hiddenContent.innerHTML = "";
+    }, 800)
+
+}
+
+copyButton.addEventListener('click', copyText);

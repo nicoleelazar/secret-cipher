@@ -18,12 +18,24 @@ p {
     font-size: 18px;
     color: $c-blue-dark;
     padding-bottom: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: $c-blue-light;
+}
+
+a:hover {
+    text-decoration: none;
+    color: $c-btn-blue;
+}
+
+.underline {
     border-bottom: dashed $c-grey-light 1px;
 
 }
 
-
-// buttons
+// buttons -----------
 
 .button-box {
     padding: 20px 0;
@@ -68,6 +80,17 @@ p {
 
 }
 
+#copyButton {
+    padding: 10px 40px;
+
+    @media #{$mq-620-down} {
+        width: 90%;
+    }
+}
+
+
+// text areas ------------------
+
 #message-box {
     width: 100%;
     height: 80px;
@@ -90,6 +113,45 @@ p {
 
 #resultMessage {
     background-color: $c-white;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     color: $c-blue-dark;
+}
+
+
+
+//copy text ---------------
+
+.copyContainer {
+    margin-bottom: 20px;
+}
+
+.copyTextBox {
+    height: 50px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+@keyframes fadeText {
+
+    0% {
+        color: $c-grey;
+    }
+
+    60% {
+        color: $c-grey;
+    }
+
+    100% {
+        color: $c-grey-alpha;
+    }
+
+}
+
+.copyTextBoxAnimate {
+    animation-name: fadeText;
+    animation-iteration-count: 1;
+    animation-duration: 0.8s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
 }

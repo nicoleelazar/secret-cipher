@@ -16,7 +16,9 @@
 
     <main>
         <h1>Secret Cipher</h1>
-        <p>Encode or Decode your messages below. Choose an option, add your text and select a rotation amount.</p>
+        <p class="underline">Encode or Decode your messages below. Simply choose an option, add your text and select a
+            rotation amount.
+        </p>
         <div class="button-box">
             <button type="button" id="encodeButton" class="btn">Encode a message</button>
             <button type="button" id="decodeButton" class="btn">Decode a message</button>
@@ -27,19 +29,36 @@
         <textarea class="form-control" name="" id="userMessage" rows="8"
             placeholder="Your message goes here"></textarea>
 
-        <!-- <div class="mobile-options full-screen-options"> -->
         <select name="rotations" id="rotations" class="custom-select">
-            <option value="13" selected>rot13</option>
-            <option value="14">rot14</option>
-            <option value="15">rot15</option>
+            <option value="10">ROT10</option>
+            <option value="11">ROT11</option>
+            <option value="12">ROT12</option>
+            <option value="13" selected>ROT13</option>
+            <option value="14">ROT14</option>
+            <option value="15">ROT15</option>
+            <option value="16">ROT16</option>
+            <option value="17">ROT17</option>
+            <option value="18">ROT18</option>
+            <option value="19">ROT19</option>
+            <option value="20">ROT20</option>
         </select>
-        <!-- </div> -->
 
         <textarea class="form-control" name="" id="resultMessage" rows="8" readonly></textarea>
 
+        <div class="copyContainer underline">
+            <button id="copyButton" type="button" class="btn btn-secondary">
+                Copy Text
+            </button>
+            <div class="copyTextBox"></div>
+        </div>
+
+        <p>Read more about <a target="_blank" href="https://en.wikipedia.org/wiki/ROT13">ROT13 </a>, a letter
+            substitution cipher
+            developed and used in Ancient Rome.</p>
     </main>
 
-    <script src="app/js/script.js"></script>
+    <script type="text/javascript" src="app/js/script.js"></script>
+
 </body>
 
 </html>
